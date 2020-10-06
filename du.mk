@@ -38,5 +38,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=google/sargo/sargo:11/RP1A.201005.004/6782484:user/release-keys
 
 $(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)    
-$(call inherit-product-if-exists, vendor/google/bonito/bonito-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
