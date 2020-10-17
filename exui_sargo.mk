@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include DU common configuration
-include vendor/du/config/common_full_phone.mk
+# Inherit some common ExtendedUI stuff.
+$(call inherit-product, vendor/exui/config/common.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/google/bonito/aosp_sargo.mk)
@@ -23,7 +23,11 @@ $(call inherit-product, device/google/bonito/aosp_sargo.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-PRODUCT_NAME := du_sargo
+# Device specific stuff
+TARGET_BOOT_ANIMATION_RES := 1080
+USE_GAPPS := true
+
+PRODUCT_NAME := exui_sargo
 PRODUCT_DEVICE := sargo
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3a
@@ -37,5 +41,4 @@ BUILD_FINGERPRINT := "google/sargo/sargo:11/RP1A.201005.004/6782484:user/release
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=google/sargo/sargo:11/RP1A.201005.004/6782484:user/release-keys
 
-$(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)    
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+$(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)
