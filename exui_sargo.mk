@@ -26,6 +26,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Device specific stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 USE_GAPPS := true
+EXUI_BUILDTYPE := OFFICIAL
+TARGET_USES_BLUR := true
 
 PRODUCT_NAME := exui_sargo
 PRODUCT_DEVICE := sargo
